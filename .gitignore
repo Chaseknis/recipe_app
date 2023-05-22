@@ -32,3 +32,5 @@
 
 #Node modules
 node_modules/
+
+config/database.yml
