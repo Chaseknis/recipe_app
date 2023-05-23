@@ -1,32 +1,24 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
+<div id="<%= dom_id recipe %>" class="recipe-container">
 
+<div class='recipe-info'>
   <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
+    <strong><%= recipe.name %></strong>
   </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
+  
+  <% if current_user.id == recipe.user_id %>
+              <%= button_to "Remove", recipe, method: :delete %>
+  <% end %>
+  </div>
+  <div>
+<a href=<%= url_for(recipe_path(recipe)) %> >
+<div class='recipe-description'>
   <p>
     <strong>Description:</strong>
     <%= recipe.description %>
   </p>
+</div>
+</a>
+</div>
 
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
-  </p>
 
 </div>
