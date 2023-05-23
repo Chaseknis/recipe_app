@@ -165,13 +165,13 @@
   margin-bottom: 10px;
 }
 
-.recipe-info{
+.recipe-info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.recipe-description{
+.recipe-description {
   display: flex;
   align-items: center;
 }
