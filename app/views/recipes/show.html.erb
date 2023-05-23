@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-
 <div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  <h2 class="recipe-name"><%= @recipe.name %></h2>
+  <div class="recipe-details">
+    <div>
+      <p>Preparation Time: <%= @recipe.preparation_time %></p>
+      <p>Cooking Time: <%= @recipe.cooking_time %></p>
+      <p>Steps:</p>
+      <p><%= @recipe.description %></p>
+    </div>
+    <div>
+      <p>
+<strong>Public:</strong>
+  <% if @recipe.public %>
+    <i class="fas fa-dot-circle text-green"></i> <!-- Green dot icon -->
+  <% else %>
+    <i class="fas fa-dot-circle text-gray"></i> <!-- Gray dot icon -->
+  <% end %>
+</p>
+    </div>
+  </div>
+  <div class="recipe-details-btns">
+    <a href="" class="button button-small">Generate Shopping List</a>
+    <a href="" class="button button-small">Add Ingredients</a>
+    <%= link_to "Back to recipes", recipes_path %>
+  </div>
+  
 </div>
