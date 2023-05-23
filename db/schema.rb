@@ -14,14 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_151012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "basket_a", primary_key: "a", id: :integer, default: nil, force: :cascade do |t|
-    t.string "fruit_a", limit: 100, null: false
-  end
-
-  create_table "basket_b", primary_key: "b", id: :integer, default: nil, force: :cascade do |t|
-    t.string "fruit_b", limit: 100, null: false
-  end
-
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.string "measurement_unit"
