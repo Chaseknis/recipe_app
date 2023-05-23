@@ -142,10 +142,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.1-x64-mingw-ucrt)
       racc (~> 1.4)
-<<<<<<< HEAD
-=======
     orm_adapter (0.5.0)
->>>>>>> 0af455954d7a050f8c62e8e0ba97523d74ff7e03
     parallel (1.23.0)
     parser (3.2.2.1)
       ast (~> 2.4.1)
