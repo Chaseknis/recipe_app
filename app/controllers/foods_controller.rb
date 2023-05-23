@@ -5,7 +5,7 @@ class FoodsController < ApplicationController
     @foods = current_user.foods
   end
 
-  def show; 
+  def show
     @food = Food.find(params[:id])
   end
 
