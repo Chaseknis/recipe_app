@@ -14,88 +14,88 @@
  *= require_self
  */
 body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-    color: #ffca7a;
-    font-size: 24px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
+  color: #ffca7a;
+  font-size: 24px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
 .button,
 .add_food_button,
 .new_food_form_button {
-    color: #ffca7a;
-    font-size: 12px;
-    padding: 6px 12px;
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: 5px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-top-color: #ffca7a;
-    border-bottom-color: #ffca7a;
-    border-left-style: none;
-    border-right-style: none;
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
-    align-self: flex-end;
+  color: #ffca7a;
+  font-size: 12px;
+  padding: 6px 12px;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 5px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #ffca7a;
+  border-bottom-color: #ffca7a;
+  border-left-style: none;
+  border-right-style: none;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+  align-self: flex-end;
 }
 
 .button:hover {
-    color: #ffca7a;
-    border-top-style: none;
-    border-bottom-style: none;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-left-color: #ffca7a;
-    border-right-color: #ffca7a;
+  color: #ffca7a;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-left-color: #ffca7a;
+  border-right-color: #ffca7a;
 }
 
 .food_table_container {
-    max-width: 600px;
-    padding: 1rem;
-    background-color: green;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  max-width: 600px;
+  padding: 1rem;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
 }
 
 .food_table_wrapper {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .new_food_form_wrapper {
-    width: 40%;
-    height: 400px;
-    padding: 1rem;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.7rem;
-    background-color: green;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  width: 40%;
+  height: 400px;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: green;
+  box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
 }
 
 .food_table {
-    min-width: 400px;
+  min-width: 400px;
   border-collapse: collapse;
   margin: 1rem 0;
-  font-size: 12px; 
-  border-radius: 5px 5px 0 0; 
+  font-size: 12px;
+  border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
 }
 
 .food_table thead tr {
@@ -107,52 +107,53 @@ h1 {
 
 .food_table th,
 .food_table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .food_table tbody tr {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .food_table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .food_table tbody tr:last-of-type {
-    border-bottom: 2px solid green;
+  border-bottom: 2px solid green;
 }
+
 .input_container {
-    width: 70%;
+  width: 70%;
 }
 
 .input_container::placeholder {
-    color: green;
+  color: green;
 }
 
 .add_food_input {
-    width: 100%;
-    border: 1px solid #ffca7a;
-    background: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    margin-top: 0.5rem;
+  width: 100%;
+  border: 1px solid #ffca7a;
+  background: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 0.5rem;
 }
 
 input::placeholder {
-    color: #ffca7a;
-    font-weight: 500;
-    font-size: 10px;
-  }
+  color: #ffca7a;
+  font-weight: 500;
+  font-size: 10px;
+}
 
 .add_food_header_wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .links {
-    font-size: 12px;
-    color: #ffca7a;
-    text-decoration: underline;
+  font-size: 12px;
+  color: #ffca7a;
+  text-decoration: underline;
 }
