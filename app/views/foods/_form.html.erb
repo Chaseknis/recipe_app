@@ -41,7 +41,7 @@
     </div>
 
     <div class="input_container">
-      <%= form.text_field :user_id,
+      <%= form.hidden_field :user_id, value: current_user.id,
             placeholder: "Enter username", class: "add_food_input" %>
     </div>
 
