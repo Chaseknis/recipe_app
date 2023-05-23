@@ -11,34 +11,43 @@
     </div>
   <% end %>
 
-<div class="new_food_form_wrapper">
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="new_food_form_wrapper">
 
-  <div>
-    <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
-  </div>
+    <div class="add_food_header_wrapper">
+      <h1>Add New Food</h1>
+      <div>
+        <%= link_to "Back to foods", foods_path, class: "links" %>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
+    <div class="input_container">
+      <%= form.text_field :name, 
+            placeholder: "Enter food name.", class: "add_food_input" %>
+    </div>
 
-  <div>
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
-  </div>
+    <div class="input_container">
+      <%= form.text_field :measurement_unit,
+            placeholder: "Enter measurement unit.", class: "add_food_input" %>
+    </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+    <div class="input_container">
+      <%= form.text_field :price,
+            placeholder: "Enter price.", class: "add_food_input" %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="input_container">
+      <%= form.number_field :quantity,
+            placeholder: "Enter measurement", class: "add_food_input" %>
+    </div>
+
+    <div class="input_container">
+      <%= form.text_field :user_id,
+            placeholder: "Enter username", class: "add_food_input" %>
+    </div>
+
+    <div>
+        <%= form.submit "Add Food", class: "button" %>
+    </div>
+
   </div>
-</div>
 <% end %>
