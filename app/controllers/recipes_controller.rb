@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
-  def show; 
+  def show
     @recipe = Recipe.find(params[:id])
   end
 
@@ -11,19 +11,18 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     puts params.inspect
-      if @recipe.save
-        flash[:notice] = 'Recipe was successfully created.'
-        redirect_to recipes_path
-      else
-        flash[:alart] = 'Recipe was not created.'
-        render :new, status: :unprocessable_entity
-      end
+    if @recipe.save
+      flash[:notice] = 'Recipe was successfully created.'
+      redirect_to recipes_path
+    else
+      flash[:alart] = 'Recipe was not created.'
+      render :new, status: :unprocessable_entity
     end
+  end
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
@@ -35,7 +34,7 @@ class RecipesController < ApplicationController
 
   private
 
-  
+
   # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
