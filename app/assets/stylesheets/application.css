@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.add_food_button,
+.new_food_form_button {
+    color: #ffca7a;
+    font-size: 12px;
+    padding: 6px 12px;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 5px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #ffca7a;
+    border-bottom-color: #ffca7a;
+    border-left-style: none;
+    border-right-style: none;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+    align-self: flex-end;
+}
+
+.add_food_button:hover {
+    color: #ffca7a;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-color: #ffca7a;
+    border-right-color: #ffca7a;
+}
+
+.food_table_container {
+    max-width: 800px;
+    height: 600px;
+    padding: 2rem;
+    background-color: red;
+    align-self: center;
+}
+
+.food_table_wrapper {
+    width: 80%;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.new_food_form_wrapper {
+    max-width: 800px;
+    height: 400px;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffca7a;
+}
+
+.food_table {
+    min-width: 400px;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 12px; 
+  border-radius: 5px 5px 0 0; 
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.food_table thead tr {
+  background-color: green;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.food_table th,
+.food_table td {
+    padding: 12px 15px;
+}
+
+.food_table tbody tr {
+    border-bottom: 1px solid white;
+}
+
+.food_table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.food_table tbody tr:last-of-type {
+    border-bottom: 2px solid green;
+}
