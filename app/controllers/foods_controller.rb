@@ -1,26 +1,20 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
 
-  # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = current_user.foods
   end
 
-  # GET /foods/1 or /foods/1.json
-  def show; end
+  def show
+    @food = Food.find(params[:id])
+  end
 
-  # GET /foods/new
   def new
     @food = Food.new
   end
 
-  # GET /foods/1/edit
-  def edit; end
-
-  # POST /foods or /foods.json
   def create
     @food = Food.new(food_params)
-
     respond_to do |format|
       if @food.save
         format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
@@ -32,7 +26,6 @@ class FoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /foods/1 or /foods/1.json
   def update
     respond_to do |format|
       if @food.update(food_params)
@@ -45,19 +38,17 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1 or /foods/1.json
   def destroy
     @food.destroy
 
     respond_to do |format|
-      format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
+      format.html { redirect_to foods_url, notice: 'Food was successfully deleted.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_food
     @food = Food.find(params[:id])
   end

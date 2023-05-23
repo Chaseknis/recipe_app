@@ -1,27 +1,30 @@
-<div id="<%= dom_id food %>">
-  <p>
-    <strong>Name:</strong>
-    <%= food.name %>
-  </p>
+<div class="added_food_details_table_container">
+  <div class="links_container">
+    <%= link_to "Edit this food", edit_food_path(@food), class: "links" %> 
+    <%= link_to "Back to foods", foods_path, class: "links" %> 
+  </div>
+  <table id="<%= dom_id food %>", class="added_food_details_table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurement Unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.user_id %></td>
+        </tr>
+    </tbody>
+  </table>
 
-  <p>
-    <strong>Measurement unit:</strong>
-    <%= food.measurement_unit %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= food.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= food.quantity %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= food.user_id %>
-  </p>
-
+  <div class="added_food_details_buttons_container"> 
+    <%= button_to "Delete this food", @food, method: :delete, class: "delete_button" %>
+</div>
 </div>
