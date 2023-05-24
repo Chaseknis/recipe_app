@@ -510,10 +510,6 @@ input::placeholder {
   border-radius: 4px;
 }
 
-/* Style the form submit button */
-
-
-/* Style the form checkbox */
 .form-field input[type="checkbox"] {
   margin-right: 5px;
   vertical-align: middle;
