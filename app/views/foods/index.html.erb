@@ -1,6 +1,4 @@
 <div class="food_table_container">
-  <p style="color: green"><%= notice %></p>
-  
   <a href="<%=request.path%>/new">
     <%= link_to new_food_path(), class: "links" do %>
       Add food
@@ -8,7 +6,7 @@
   </a>
 
   <div class="food_table_wrapper">
-    <div id="foods">
+    <div>
       <table class="food_table">
         <thead>
           <tr>
