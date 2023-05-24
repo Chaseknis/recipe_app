@@ -1,7 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  
-  def index
-  end
+  def index; end
 
   # GET /recipe_foods/new
   def new
@@ -13,12 +11,12 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipe_id]
 
-      if @recipe_food.save
-        redirect_to recipe_path(@recipe_food.recipe_id), notice: 'Ingredient added successfully!' 
-      else
-        flash[:alert] = 'Failed creating ingredient'
-        redirect_back(fallback_location: root_path)
-      end
+    if @recipe_food.save
+      redirect_to recipe_path(@recipe_food.recipe_id), notice: 'Ingredient added successfully!'
+    else
+      flash[:alert] = 'Failed creating ingredient'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def destroy
