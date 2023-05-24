@@ -1,8 +1,7 @@
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
-    <div style="color: red">
+    <div class="error-message">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
       <ul>
         <% recipe.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
+  <div class="form-field">
+    <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :preparation_time, style: "display: block" %>
+  <div class="form-field">
+    <%= form.label :preparation_time %>
     <%= form.number_field :preparation_time %>
   </div>
 
-  <div>
-    <%= form.label :cooking_time, style: "display: block" %>
+  <div class="form-field">
+    <%= form.label :cooking_time %>
     <%= form.number_field :cooking_time %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
+  <div class="form-field">
+    <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
+  <div class="form-field">
+    <%= form.label :public %>
     <%= form.check_box :public %>
   </div>
 
-  <div>
+  <div class="form-field">
     <%= form.submit "Create Recipe" %>
   </div>
 <% end %>

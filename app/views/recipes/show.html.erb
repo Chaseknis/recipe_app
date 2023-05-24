@@ -1,4 +1,4 @@
-<div>
+<div class='details-container'>
   <h2 class="recipe-name"><%= @recipe.name %></h2>
   <div class="recipe-details">
     <div>
@@ -8,20 +8,49 @@
       <p><%= @recipe.description %></p>
     </div>
     <div>
-      <p>
-<strong>Public:</strong>
-  <% if @recipe.public %>
-    <i class="fas fa-dot-circle text-green"></i> <!-- Green dot icon -->
-  <% else %>
-    <i class="fas fa-dot-circle text-gray"></i> <!-- Gray dot icon -->
-  <% end %>
-</p>
+      <% if current_user.id == @recipe.user_id %>
+        <% if @recipe.public %>
+          <p>Current Status: Public</p>
+          <%= button_to "Change public to private", recipe_path(@recipe), method: :patch%>
+        <% else %>
+          <p>Current Status: Private</p>
+          <%= button_to "Change public to public", recipe_path(@recipe), method: :patch%>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="recipe-details-btns">
-    <a href="" class="button button-small">Generate Shopping List</a>
-    <a href="" class="button button-small">Add Ingredients</a>
+    <% if current_user.id == @recipe.user_id %>
+      <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe.id), class: 'btn btn-secondary' %>
+    <% end %>
     <%= link_to "Back to recipes", recipes_path %>
   </div>
-  
 </div>
+  
+
+  <table class="table table-sm  table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+      <tbody class="table-group-divider">
+      <% @ingredients.each do |ingredient|%>
+        <tr>
+          <td><%= ingredient.food.name %></td>
+          <td><%= ingredient.quantity%> g</td>
+          <td>$ <%= ingredient.food.price * ingredient.quantity %></td>
+          <td>
+          <% if current_user.id == @recipe.user_id %>
+            <%= button_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: ingredient.id), method: :delete,  class: "btn btn-link" %>
+          <%else%>
+            <p>Actions Not allowed</p>
+          <%end%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
