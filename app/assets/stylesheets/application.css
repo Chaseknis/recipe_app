@@ -45,7 +45,7 @@ h1 {
 }
 
 .food_table_container {
-  max-width: 600px;
+  width: 80%;
   padding: 0 1rem 2rem 1rem;
   background-color: #f5f5f5;
   display: flex;
@@ -58,7 +58,6 @@ h1 {
 }
 
 .food_table_wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,11 +78,9 @@ h1 {
 }
 
 .food_table {
-  margin: 1rem 0;
+  width: 100%;
+  margin: auto;
   border-collapse: collapse;
-  font-size: 16px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
 }
 
@@ -365,9 +362,209 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
 }
 
 .recipe-description {
   display: flex;
   align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Add desired styles to the table */
+.table {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+/* Add styles to the table header */
+.table thead {
+  background-color: #f5f5f5;
+}
+
+/* Add styles to the table cells */
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Add alternating background colors to table rows */
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Add hover effect to table rows */
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Add styles to the "Actions" column */
+.table td:last-child {
+  width: 100px;
+  text-align: center;
+}
+
+/* Style the recipe name */
+.recipe-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style the recipe details container */
+.recipe-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Style the left container within the recipe details */
+.recipe-details > div:first-child {
+  width: 60%;
+}
+
+/* Style the right container within the recipe details */
+.recipe-details > div:last-child {
+  width: 40%;
+}
+
+/* Style the buttons container */
+.recipe-details-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the "Add Ingredient" button */
+.recipe-details-btns a.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Style the "Back to recipes" link */
+.recipe-details-btns a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Style the buttons within the right container */
+.recipe-details div:last-child button {
+  margin-top: 10px;
+}
+
+/* Style the paragraphs within the recipe details */
+.recipe-details p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.details-container{
+  margin-bottom: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+/* Style the error message */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Style the form fields */
+.form-field {
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+.form-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the form inputs and text areas */
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the form submit button */
+.form-field input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the form checkbox */
+.form-field input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.recipe-form-container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the form select dropdown */
+.form-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the form number field */
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the form submit button */
+.form-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.ingredient-container {
+  padding: 30px;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
