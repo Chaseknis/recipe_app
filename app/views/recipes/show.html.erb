@@ -54,3 +54,21 @@
       <% end %>
     </tbody>
   </table>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.querySelector('input[type="checkbox"]');
+      const statusText = document.querySelector('div p');
+      const toggleButton = document.querySelector('button[type="submit"]');
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          statusText.textContent = 'Current Status: Public';
+          toggleButton.textContent = 'Change public to private';
+        } else {
+          statusText.textContent = 'Current Status: Private';
+          toggleButton.textContent = 'Change private to public';
+        }
+      });
+    });
+</script>
