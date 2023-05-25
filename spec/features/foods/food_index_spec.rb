@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Foods index', type: :feature do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
   let(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
   before do
     ActionMailer::Base.deliveries.clear

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Foods index', type: :feature do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
   let(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
   before do
     ActionMailer::Base.deliveries.clear
@@ -21,7 +21,7 @@ RSpec.feature 'Foods index', type: :feature do
     click_on 'Back to foods'
     expect(page).to have_current_path(foods_path)
   end
- 
+
   scenario 'allows user to add a food' do
     fill_in 'food_name', with: 'Jamal Goda'
     fill_in 'food_measurement_unit', with: 'Pound'

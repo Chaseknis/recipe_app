@@ -16,16 +16,15 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
-      if @food.save
-        flash[:notice] = 'Food was successfully created.'
-        redirect_to foods_path
-        
-      else
-        flash[:alart] = 'Food was not created.'
-        render :new, status: :unprocessable_entity
-      end
-    end
+    if @food.save
+      flash[:notice] = 'Food was successfully created.'
+      redirect_to foods_path
 
+    else
+      flash[:alart] = 'Food was not created.'
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def update
     respond_to do |format|

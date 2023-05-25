@@ -8,8 +8,8 @@ RSpec.describe 'Recipes Food New Page', type: :feature do
   before do
     sign_in user
     @recipe = Recipe.create(name: 'Recipe', description: 'Description', cooking_time: '1 hour',
-                            preparation_time: '1 hour', user: user)
-    @food = Food.create(name: 'Banana', measurement_unit: 'grams', price: 12, quantity: 10, user: user)
+                            preparation_time: '1 hour', user:)
+    @food = Food.create(name: 'Banana', measurement_unit: 'grams', price: 12, quantity: 10, user:)
     visit new_recipe_recipe_food_path(@recipe.id)
   end
 
