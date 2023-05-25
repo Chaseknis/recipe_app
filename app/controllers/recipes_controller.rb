@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+ 
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
