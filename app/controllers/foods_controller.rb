@@ -15,16 +15,17 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    respond_to do |format|
+    @food.user = current_user
       if @food.save
-        format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
-        format.json { render :show, status: :created, location: @food }
+        flash[:notice] = 'Food was successfully created.'
+        redirect_to foods_path
+        
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
+        flash[:alart] = 'Food was not created.'
+        render :new, status: :unprocessable_entity
       end
     end
-  end
+
 
   def update
     respond_to do |format|
