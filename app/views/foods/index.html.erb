@@ -7,6 +7,7 @@
 
   <div class="food_table_wrapper">
     <div>
+    <% if @foods.present? %>
       <table class="food_table">
         <thead>
           <tr>
@@ -31,6 +32,9 @@
           <% end %>
         </tbody>
       </table>
+      <% else %>
+      <p>No food items found.</p>
+    <% end %>
     </div>
   </div>
 

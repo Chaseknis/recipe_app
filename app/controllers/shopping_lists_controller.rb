@@ -1,13 +1,23 @@
 class ShoppingListsController < ApplicationController
   def index
-    @user = current_user
-    @recipe = Recipe.where(user: @user)
-    @ingredients = RecipeFood.includes(:food).where(recipe: @recipe).group_by { |ingredient| ingredient.food.name }
+    @missing_foods = current_user.foods.where.not(id: RecipeFood.includes(:recipe)
+    .where(recipes: { user_id: current_user.id }).pluck(:food_id))
+@shopping_list_items = {}
+@total_items = 0
+@total_price = 0.0
 
-    @total_price = @ingredients.map do |_food, ingredients|
-      ingredients.map do |ingredient|
-        ingredient.food.price * ingredient.quantity
-      end.sum
-    end.sum
+@missing_foods.each do |food|
+quantity = food.quantity
+price = food.price * quantity
+if @shopping_list_items[food.id].present?
+@shopping_list_items[food.id][:quantity] += quantity
+@shopping_list_items[food.id][:price] += price
+else
+@shopping_list_items[food.id] = { food:, quantity:, price: }
+end
+@total_price += price
+end
+@total_items += @missing_foods.select(:id).distinct.count
+@shopping_list_items = @shopping_list_items.values.sort_by { |item| item[:food].name }
   end
 end

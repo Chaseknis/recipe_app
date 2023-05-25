@@ -9,7 +9,7 @@
                 The amount of food items to buy:
            </h4>
            <p>
-                <%= @ingredients.length %>
+                <%= @total_items %>
            </p>
        </div>
        <div class="flex-grow-1">
@@ -17,13 +17,14 @@
                 The total value of food needed:
            </h4>
            <p>
-                $<%= @total_price %>
+                <%= number_to_currency(@total_price) %>
            </p>
        </div>
     </div>
 </div>
 
 <div class="shopping_lists_table_container">
+<% if @shopping_list_items.present? %>
     <table class="table table-bordered table-striped" >
         <thead>
         <tr class="text-center">
@@ -33,20 +34,21 @@
         </tr>
         </thead>
         <tbody class="text-center">
-        <% @ingredients.each do |food, ingredients| %>
+        <% @shopping_list_items.each do |item| %>
         <tr>
-            <td><%= food %></td>
+            <td><%= item[:food].name %></td>
             <td>
-                <% total_quantity = ingredients.map(&:quantity).sum %>
-                <span><%= total_quantity %> <%= ingredients.first.food.measurement_unit %></span>
-            </td>
+                <%= item[:quantity] %> <%= item[:food].measurement_unit %>
             <td>
-                <% total_price = ingredients.map { |ingredient| ingredient.quantity * ingredient.food.price }.sum %>
-                $<%= total_price %>
+                
+                <%= number_to_currency(item[:price]) %>
             </td>
         </tr>
         <% end %>
         </tbody>
     </table>
+    <% else %>
+      <p>No missing food items found.</p>
+    <% end %>
 </div>
 <%# <%= render partial: "shared/logout"%>
