@@ -16,6 +16,9 @@
       <%= link_to 'Public Recipes', public_recipes_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
+      <%= link_to 'Shopping List', shopping_lists_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
       <% if current_user %>
         <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn-small btn-outline" %>
       <% else %>

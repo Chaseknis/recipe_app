@@ -201,7 +201,8 @@ input::placeholder {
   width: 100%;
 }
 
-.public_recipes_container {
+.public_recipes_container,
+.shopping_lists_container {
   width: 40%;
   margin: auto;
   background-color: #f5f5f5;
