@@ -23,6 +23,7 @@
     <% if current_user.id == @recipe.user_id %>
       <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe.id), class: 'btn btn-secondary' %>
     <% end %>
+    <%= link_to "Generate Shopping List", shopping_lists_path, class: 'btn btn-secondary' %>
     <%= link_to "Back to recipes", recipes_path %>
   </div>
 </div>

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Foods index', type: :feature do
   include Devise::Test::IntegrationHelpers # Include Devise test helpers
-  let(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
+  let(:user) { FactoryBot.create(:user, email: 'unique12@example.com', confirmed_at: Time.current) }
   before do
     ActionMailer::Base.deliveries.clear
     user.confirmation_token = Devise.token_generator.generate(User, :confirmation_token)
