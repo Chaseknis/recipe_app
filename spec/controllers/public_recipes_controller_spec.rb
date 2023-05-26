@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PublicRecipesController, type: :controller do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
-    include Devise::Test::ControllerHelpers # Include Devise test helpers
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  include Devise::Test::ControllerHelpers # Include Devise test helpers
   describe 'GET #index' do
     let(:user) { FactoryBot.create(:user, email: 'unique92@example.com', confirmed_at: Time.current) }
 

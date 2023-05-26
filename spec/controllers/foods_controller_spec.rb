@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe FoodsController, type: :controller do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
-    include Devise::Test::ControllerHelpers # Include Devise test helpers
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  include Devise::Test::ControllerHelpers # Include Devise test helpers
   describe 'GET #index' do
     context 'when user is logged in' do
       let(:user) { FactoryBot.create(:user, email: 'unique12@example.com', confirmed_at: Time.current) }

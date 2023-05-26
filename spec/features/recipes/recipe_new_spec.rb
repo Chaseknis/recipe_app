@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Recipes New Page', type: :feature do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
-    let(:user) { FactoryBot.create(:user, email: 'unique2@example.com', confirmed_at: Time.current) }
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  let(:user) { FactoryBot.create(:user, email: 'unique2@example.com', confirmed_at: Time.current) }
   before do
     ActionMailer::Base.deliveries.clear
     user.confirmation_token = Devise.token_generator.generate(User, :confirmation_token)

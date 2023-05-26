@@ -1,7 +1,8 @@
 require 'rails_helper'
-include ActionView::Helpers::NumberHelper # Include number_to_currency helper
+
 
 RSpec.feature 'Foods index', type: :feature do
+  include ActionView::Helpers::NumberHelper # Include number_to_currency helper
   include Devise::Test::IntegrationHelpers # Include Devise test helpers
   let(:user) { FactoryBot.create(:user, email: 'unique@example.com', confirmed_at: Time.current) }
   before do

@@ -1,17 +1,17 @@
 require 'rails_helper'
 RSpec.describe 'Recipes Index Page', type: :feature do
-    include Devise::Test::IntegrationHelpers # Include Devise test helpers
-    let(:user) { FactoryBot.create(:user, email: 'unique1@example.com', confirmed_at: Time.current) }
-    context 'when there are no recipes' do
-        before do
-        ActionMailer::Base.deliveries.clear
-        user.confirmation_token = Devise.token_generator.generate(User, :confirmation_token)
-        user.confirmed_at = Time.current
-        user.save
-        sign_in user
-        visit recipes_path
-        end
-  
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  let(:user) { FactoryBot.create(:user, email: 'unique1@example.com', confirmed_at: Time.current) }
+  context 'when there are no recipes' do
+    before do
+      ActionMailer::Base.deliveries.clear
+      user.confirmation_token = Devise.token_generator.generate(User, :confirmation_token)
+      user.confirmed_at = Time.current
+      user.save
+      sign_in user
+      visit recipes_path
+    end
+
     it 'displays a message saying there are no recipes available' do
       expect(page).to have_content 'No recipe available'
     end
