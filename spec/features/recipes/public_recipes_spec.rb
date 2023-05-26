@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature 'Foods index', type: :feature do
   include ActionView::Helpers::NumberHelper # Include number_to_currency helper
   include Devise::Test::IntegrationHelpers # Include Devise test helpers
