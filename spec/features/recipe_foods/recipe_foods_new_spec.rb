@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Recipes Food New Page', type: :feature do
   include Devise::Test::IntegrationHelpers # Include Devise test helpers
 
-  let!(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
+  let!(:user) { FactoryBot.create(:user, email: 'unique14@example.com',  confirmed_at: Time.current) }
 
   before do
     sign_in user
