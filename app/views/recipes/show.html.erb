@@ -41,7 +41,7 @@
       <% @ingredients.each do |ingredient|%>
         <tr>
           <td><%= ingredient.food.name %></td>
-          <td><%= ingredient.quantity%> g</td>
+          <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
           <td>$ <%= ingredient.food.price * ingredient.quantity %></td>
           <td>
           <% if current_user.id == @recipe.user_id %>
