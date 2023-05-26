@@ -1,6 +1,5 @@
 class ShoppingListsController < ApplicationController
   def index
-
     @missing_foods = current_user.foods.where.not(id: RecipeFood.includes(:recipe)
     .where(recipes: { user_id: current_user.id }).pluck(:food_id))
     @shopping_list_items = {}
@@ -20,6 +19,5 @@ class ShoppingListsController < ApplicationController
     end
     @total_items += @missing_foods.select(:id).distinct.count
     @shopping_list_items = @shopping_list_items.values.sort_by { |item| item[:food].name }
-
   end
 end
