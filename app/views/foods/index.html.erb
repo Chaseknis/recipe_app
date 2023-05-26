@@ -1,0 +1,41 @@
+<div class="food_table_container">
+  <a href="<%=request.path%>/new">
+    <%= link_to new_food_path(), class: "links" do %>
+      Add food
+    <% end %>
+  </a>
+
+  <div class="food_table_wrapper">
+    <div>
+    <% if @foods.present? %>
+      <table class="food_table">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td><%= food.name %></td>
+              <td><%= food.measurement_unit %></td>
+              <td>$<%= food.price %></td>
+              <td><%= food.quantity %></td>
+              <td>
+                <%= button_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure you want to delete this food?" }, class: "delete_button" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% else %>
+      <p>No food items found.</p>
+    <% end %>
+    </div>
+  </div>
+
+</div>

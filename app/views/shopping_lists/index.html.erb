@@ -1,0 +1,54 @@
+<div class="shopping_lists_container">
+    <h2 class="text-center">
+     Shopping List
+    </h2>
+
+    <div class="d-flex flex-row ">
+       <div class="flex-grow-1">
+           <h4>
+                The amount of food items to buy:
+           </h4>
+           <p>
+                <%= @total_items %>
+           </p>
+       </div>
+       <div class="flex-grow-1">
+            <h4>
+                The total value of food needed:
+           </h4>
+           <p>
+                <%= number_to_currency(@total_price) %>
+           </p>
+       </div>
+    </div>
+</div>
+
+<div class="shopping_lists_table_container">
+<% if @shopping_list_items.present? %>
+    <table class="table table-bordered table-striped" >
+        <thead>
+        <tr class="text-center">
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <% @shopping_list_items.each do |item| %>
+        <tr>
+            <td><%= item[:food].name %></td>
+            <td>
+                <%= item[:quantity] %> <%= item[:food].measurement_unit %>
+            <td>
+                
+                <%= number_to_currency(item[:price]) %>
+            </td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+    <% else %>
+      <p>No missing food items found.</p>
+    <% end %>
+</div>
+<%# <%= render partial: "shared/logout"%>

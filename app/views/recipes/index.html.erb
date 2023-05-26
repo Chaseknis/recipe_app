@@ -1,0 +1,13 @@
+<h1>Recipes</h1>
+
+<div id="recipes">
+<% if @recipes.blank? %>
+  <p>No recipe available</p>
+<% else %>
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+   <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Add New Recipe", new_recipe_path %>
