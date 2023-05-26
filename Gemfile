@@ -66,6 +66,7 @@ group :development do
   gem 'cleanup'
   gem 'letter_opener'
   gem 'web-console'
+  
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -74,6 +75,7 @@ group :development do
   # gem "spring"
 end
 
+gem 'rails-controller-testing'
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
