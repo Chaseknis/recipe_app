@@ -23,6 +23,7 @@
     <% if current_user.id == @recipe.user_id %>
       <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe.id), class: 'btn btn-secondary' %>
     <% end %>
+    <%= link_to "Generate Shopping List", shopping_lists_path, class: 'btn btn-secondary' %>
     <%= link_to "Back to recipes", recipes_path %>
   </div>
 </div>
@@ -41,7 +42,7 @@
       <% @ingredients.each do |ingredient|%>
         <tr>
           <td><%= ingredient.food.name %></td>
-          <td><%= ingredient.quantity%> g</td>
+          <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
           <td>$ <%= ingredient.food.price * ingredient.quantity %></td>
           <td>
           <% if current_user.id == @recipe.user_id %>
